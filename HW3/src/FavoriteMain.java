@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class Hw3
  */
-public class HW3 extends HttpServlet {
+public class FavoriteMain extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     
