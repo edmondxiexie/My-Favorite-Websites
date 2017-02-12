@@ -218,6 +218,8 @@ public class FavoriteMain extends HttpServlet {
             // Generate an HTML <form> to get data from the user
             out.println("<form method=\"POST\">");
             out.println("    <table>");
+            
+            // First row
             out.println("        <tr>");
             out.println(
                     "            <td style=\"font-size: large\">E-mail Address:</td>");
@@ -229,10 +231,14 @@ public class FavoriteMain extends HttpServlet {
             out.println("              autofocus />");
             out.println("            <td>");
             out.println("        </tr>");
+            
+            // Second row
             out.println("        <tr>");
             out.println("            <td style=\"font-size: large\">Password:</td>");
             out.println("            <td><input type=\"password\" name=\"password\" /></td>");
             out.println("        </tr>");
+            
+            // Third row
             out.println("        <tr>");
             out.println("            <td colspan=\"2\" align=\"center\">");
             out.println("                <input type=\"submit\" name=\"button\" value=\"Login\" />");
@@ -268,7 +274,7 @@ public class FavoriteMain extends HttpServlet {
         
             // Generate an HTML <form> to get data from the user
             out.println("<form method=\"POST\">");
-            out.println("    <table/>");
+            out.println("    <table>");
             
             // Set E-mail Address
             out.println("        <tr>");
