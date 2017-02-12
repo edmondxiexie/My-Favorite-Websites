@@ -13,5 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="/Users/Edmond/Documents/CMU Study/08-672/genericdao-3.0.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

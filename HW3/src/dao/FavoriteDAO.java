@@ -1,3 +1,4 @@
+package dao;
 /**
  * 08-672 Assignment 3.
  * @author Jiayi Xie
@@ -14,6 +15,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import databean.FavoriteBean;
 
 public class FavoriteDAO {
 	private List<Connection> connectionPool = new ArrayList<Connection>();

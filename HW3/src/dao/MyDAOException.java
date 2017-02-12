@@ -1,3 +1,4 @@
+package dao;
 /**
  * 08-672 Assignment 3.
  * @author Jiayi Xie

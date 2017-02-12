@@ -1,5 +1,5 @@
+package dao;
 /**
- * 08-672 Assignment 3.
  * @author Jiayi Xie
  * @id jiayix
  * 11/25/2016
@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import databean.UserBean;
 
 public class UserDAO {
 	private List<Connection> connectionPool = new ArrayList<Connection>();
@@ -59,7 +61,8 @@ public class UserDAO {
 		Connection con = null;
         try {
         	con = getConnection();
-        	PreparedStatement pstmt = con.prepareStatement("INSERT INTO " 
+        	PreparedStatement pstmt = con.prepareStatement(
+        	        "INSERT INTO " 
         	        + tableName 
         	        + " (email,firstName,lastName,password) VALUES (?,?,?,?)");
         	
@@ -153,7 +156,8 @@ public class UserDAO {
         try {
         	con = getConnection();
             Statement stmt = con.createStatement();
-            stmt.executeUpdate("CREATE  TABLE " + tableName 
+            stmt.executeUpdate(
+                    "CREATE  TABLE " + tableName 
                     + " (userId INT NOT NULL AUTO_INCREMENT," 
                     + " email TEXT NULL," 
                     + " firstName TEXT NULL, " 

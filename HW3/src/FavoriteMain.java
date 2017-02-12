@@ -341,6 +341,7 @@ public class FavoriteMain extends HttpServlet {
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
 
+            out.println("<!DOCTYPE html>");
             out.println("<html>");
 
             generateHead(out);
