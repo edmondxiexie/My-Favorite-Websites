@@ -16,6 +16,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.FavoriteDAO;
+import dao.MyDAOException;
+import dao.UserDAO;
+import databean.FavoriteBean;
+import databean.UserBean;
+import formbean.FavoriteForm;
+import formbean.LoginForm;
+import formbean.RegisterForm;
+
 /**
  * Servlet implementation class Hw3
  */
@@ -58,6 +67,7 @@ public class FavoriteMain extends HttpServlet {
             List<String> errors = new ArrayList<String>();
             
             LoginForm loginForm = new LoginForm(request);
+            
             RegisterForm registerForm = new RegisterForm(request);
             
             if (!loginForm.isPresent()) {
@@ -67,17 +77,22 @@ public class FavoriteMain extends HttpServlet {
             
             try {
                 UserBean user;
-
+                   
+                // Jump to register page. 
                 if (loginForm.getButton().equals("Register")) {
                     outputRegisterPage(response, loginForm, registerForm, errors);
                     return;
-                } else if(loginForm.getButton().equals("Login")){
+                } 
+                
+                // Login page
+                else if(loginForm.getButton().equals("Login")){
                     errors.addAll(loginForm.getValidationErrors());
                     if (errors.size() != 0) {
                         outputLoginPage(response, loginForm, errors);
                         return;
                     }
-
+                       
+                    // Find user in the database
                     user = userDAO.read(loginForm.getEmailAddress());
                     if (user == null) {
                         errors.add("No such user");
@@ -90,7 +105,10 @@ public class FavoriteMain extends HttpServlet {
                         outputLoginPage(response, loginForm, errors);
                         return;
                     }
-                } else {                    
+                } 
+                
+                // Register page 
+                else {                    
                     user = userDAO.read(registerForm.getEmailAddress());
                     if (user != null) {
                         errors.add("Exsiting user");
@@ -199,7 +217,7 @@ public class FavoriteMain extends HttpServlet {
         
             // Generate an HTML <form> to get data from the user
             out.println("<form method=\"POST\">");
-            out.println("    <table/>");
+            out.println("    <table>");
             out.println("        <tr>");
             out.println(
                     "            <td style=\"font-size: large\">E-mail Address:</td>");
