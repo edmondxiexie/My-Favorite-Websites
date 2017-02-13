@@ -6,7 +6,6 @@ import org.genericdao.GenericDAO;
 
 import databean.User;
 
-// generic
 public class UserDAO2 extends GenericDAO<User> {
 
     public UserDAO2(ConnectionPool connectionPool, String tableName) throws DAOException {
